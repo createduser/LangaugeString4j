@@ -1,8 +1,12 @@
 package io.github.userrrrr.langString.test;
 
+import io.github.userrrrr.langString.LangString;
+import io.github.userrrrr.langString.LangStrings;
 import org.junit.jupiter.api.Test;
 
 import io.github.userrrrr.langString.Lang;
+
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,6 +44,12 @@ public class LangTest {
         assertEquals("SG",SG_en.getRegionCode());
         assertEquals(_ru.getRegionCode(),"");
 
+
+        LangStrings langStrings = new LangStrings("hello");
+        langStrings.set(new LangString(Lang._zh,"ÄãºÃ"));
+        langStrings.set(new LangString(Lang._fr,"Bonjour"));
+
+        System.out.println(langStrings.get(new Lang(Locale.getDefault())));
     }
     @Test
     public void getCode(){

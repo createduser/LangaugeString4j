@@ -44,15 +44,15 @@ public class Lang {
     /**
      * 全球范围内中文的Lang定义
      */
-    public static final Lang _zh = new Lang("zh","");
+    public static final Lang _zh = new Lang(Locale.CHINESE);
     /**
      * 中国内地范围中文内的Lang定义
      */
-    public static final Lang CN_zh = new Lang("zh","CN");
+    public static final Lang CN_zh = new Lang(Locale.CHINA);
     /**
      * 中国台湾省范围内中文的Lang定义
      */
-    public static final Lang TW_zh = new Lang("zh","TW");
+    public static final Lang TW_zh = new Lang(Locale.TAIWAN);
     /**
      * 中国香港特别行政区范围内中文的Lang定义
      */

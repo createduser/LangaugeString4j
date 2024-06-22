@@ -27,6 +27,9 @@ public class LangStringsTest {
         assertEquals("root",langStrings.get(Lang.CA_en));
         assertEquals("CN_zh",langStrings.get(Lang.CN_zh));
         assertEquals("_zh",langStrings.get(Lang._zh));
+
+        langStrings.set(new LangString(Lang._zh,"ÄãºÃ"));
+        langStrings.set(new LangString(Lang._fr,"Bonjour"));
     }
     @Test
     public void getAll(){
