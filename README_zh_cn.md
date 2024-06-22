@@ -1,12 +1,12 @@
 # LanguageString4j
-[·±ówÖÐÎÄ](README_zh.md) [¼òÌåÖÐÎÄ](README_zh_cn.md) [English](README.md)
-## ¼ò½é
-<p>ÕâÊÇÒ»¸öÎªÁËÔÚ¶àÓïÑÔ³¡¾°ÏÂÎª¸ü·½±ã²Ù×÷×Ö·û´®Ëùµ®ÉúµÄ´úÂë¿â</p>
-ÔÚÒÔÍù£¬ÎÒÃÇÐèÒª´æ´¢¶à¸öÓïÑÔ£¬¿ÉÄÜÐèÒªÕâÃ´×ö
+[ç¹é«”ä¸­æ–‡](README_zh.md) [ç®€ä½“ä¸­æ–‡](README_zh_cn.md) [English](README.md)
+## ç®€ä»‹
+<p>è¿™æ˜¯ä¸€ä¸ªä¸ºäº†åœ¨å¤šè¯­è¨€åœºæ™¯ä¸‹ä¸ºæ›´æ–¹ä¾¿æ“ä½œå­—ç¬¦ä¸²æ‰€è¯žç”Ÿçš„ä»£ç åº“</p>
+åœ¨ä»¥å¾€ï¼Œæˆ‘ä»¬éœ€è¦å­˜å‚¨å¤šä¸ªè¯­è¨€ï¼Œå¯èƒ½éœ€è¦è¿™ä¹ˆåš
 
 ```java
 String str = "hello";
-String str_zh = "ÄãºÃ";
+String str_zh = "ä½ å¥½";
 String str_fr = "Bonjour";
 
 if (Locale.getDefault().equals(Locale.ENGLISH)){
@@ -19,36 +19,36 @@ if (Locale.getDefault().equals(Locale.FRENCH)){
         System.out.println(str_fr);
 }
 ```
-ÒÔÉÏ´úÂëÉõÖÁ»¹Î´ÊÊÅäÍ¬ÓïÑÔ²»Í¬µØÇøËù·µ»ØLocale²»Í¬µÄÎÊÌâ£¬¶¼»áÏÔµÃÈç´ËÓ·Ö×
+ä»¥ä¸Šä»£ç ç”šè‡³è¿˜æœªé€‚é…åŒè¯­è¨€ä¸åŒåœ°åŒºæ‰€è¿”å›žLocaleä¸åŒçš„é—®é¢˜ï¼Œéƒ½ä¼šæ˜¾å¾—å¦‚æ­¤è‡ƒè‚¿
 
-µ«µ±ÄúÊ¹ÓÃLanguageString4jºó£¬Ö»ÐèÒªÕâÑù×ö
+ä½†å½“æ‚¨ä½¿ç”¨LanguageString4jåŽï¼Œåªéœ€è¦è¿™æ ·åš
 ```java
 LangStrings langStrings = new LangStrings("hello");
-langStrings.set(new LangString(Lang._zh,"ÄãºÃ"));
+langStrings.set(new LangString(Lang._zh,"ä½ å¥½"));
 langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 ```
-## ½¡×³ÐÔ
+## å¥å£®æ€§
 ### LangStrings
-ÔÚµ÷ÓÃ`LangStrings.get`·½·¨Ê±»áÏÈ³¢ÊÔ»ñµÃÍêÈ«Æ¥ÅäÓïÑÔºÍµØÇøµÄ×Ö·û´®£¬Èç¹ûÎÞ·¨»ñµÃ¾Í»áÈ¥»ñµÃ¸ÃÓïÑÔµÄ×Ö·û´®
-£¬Èç¹û»¹ÊÇÎÞ·¨»ñµÃ¾Í»á·µ»Ø`LangStrings`¹¹Ôìº¯ÊýËù´«½øÈ¥µÄ`rootStr`¡£
+åœ¨è°ƒç”¨`LangStrings.get`æ–¹æ³•æ—¶ä¼šå…ˆå°è¯•èŽ·å¾—å®Œå…¨åŒ¹é…è¯­è¨€å’Œåœ°åŒºçš„å­—ç¬¦ä¸²ï¼Œå¦‚æžœæ— æ³•èŽ·å¾—å°±ä¼šåŽ»èŽ·å¾—è¯¥è¯­è¨€çš„å­—ç¬¦ä¸²
+ï¼Œå¦‚æžœè¿˜æ˜¯æ— æ³•èŽ·å¾—å°±ä¼šè¿”å›ž`LangStrings`æž„é€ å‡½æ•°æ‰€ä¼ è¿›åŽ»çš„`rootStr`ã€‚
 
 ### Lang
 
-ÎÒÃÇ¿¼ÂÇµ½ÁË´óÅúÁ¿´´½¨`Lang`µÄÊ¹ÓÃ³¡¾°¡£Èç¹û½ö½öÖ»ÊÇÆÕÍ¨µØÃ¿´Î´´½¨Ê±¶¼ÔÚÄÚ´æÖÐÉêÇë¿Õ¼äÀ´·ÅÏÂ´óÁ¿ÖØ¸´µÄ`Lang`
-£¬±ØÈ»»á¸øÄÚ´æÔì³ÉºÜ´óµÄ¸ºµ£¡£ËùÒÔÎÒÃÇÑ¡ÔñÓÃÏñ`String`Ò»ÑùµÄ´¦Àí·½·¨
+æˆ‘ä»¬è€ƒè™‘åˆ°äº†å¤§æ‰¹é‡åˆ›å»º`Lang`çš„ä½¿ç”¨åœºæ™¯ã€‚å¦‚æžœä»…ä»…åªæ˜¯æ™®é€šåœ°æ¯æ¬¡åˆ›å»ºæ—¶éƒ½åœ¨å†…å­˜ä¸­ç”³è¯·ç©ºé—´æ¥æ”¾ä¸‹å¤§é‡é‡å¤çš„`Lang`
+ï¼Œå¿…ç„¶ä¼šç»™å†…å­˜é€ æˆå¾ˆå¤§çš„è´Ÿæ‹…ã€‚æ‰€ä»¥æˆ‘ä»¬é€‰æ‹©ç”¨åƒ`String`ä¸€æ ·çš„å¤„ç†æ–¹æ³•
 
-ÔÚ`Lang`ÖÐ£¬ÓÐÒ»¸ö¾²Ì¬³£Á¿`ArrayList`³ÉÔ±½Ð×ö`baseLangs`¡£ÀïÃæ´æ·Å×ÅBaseLang¡£ÔÚ´´½¨`Lang`Ê±£¬»áÊ×ÏÈ´´½¨Ò»¸öBaseLang
-£¬È»ºó³¢ÊÔ×ÅÔÚ`baseLangs`ÖÐ²éÕÒÊÇ·ñÓÐÕâ¸ö`BaseLang`¡£Èç¹ûÓÐ
-£¬ÄÇÃ´`Lang`ÖÐµÄ`baseLangIndex`µÄÖµ¾ÍÊÇÄÇ¸ö³ÉÔ±ÔÚ`baseLangs`ÀïµÄÏÂ±ê¡£
+åœ¨`Lang`ä¸­ï¼Œæœ‰ä¸€ä¸ªé™æ€å¸¸é‡`ArrayList`æˆå‘˜å«åš`baseLangs`ã€‚é‡Œé¢å­˜æ”¾ç€BaseLangã€‚åœ¨åˆ›å»º`Lang`æ—¶ï¼Œä¼šé¦–å…ˆåˆ›å»ºä¸€ä¸ªBaseLang
+ï¼Œç„¶åŽå°è¯•ç€åœ¨`baseLangs`ä¸­æŸ¥æ‰¾æ˜¯å¦æœ‰è¿™ä¸ª`BaseLang`ã€‚å¦‚æžœæœ‰
+ï¼Œé‚£ä¹ˆ`Lang`ä¸­çš„`baseLangIndex`çš„å€¼å°±æ˜¯é‚£ä¸ªæˆå‘˜åœ¨`baseLangs`é‡Œçš„ä¸‹æ ‡ã€‚
 
-Ò²¾ÍÊÇËµµ±ÄúÖØ¸´´´½¨Ò»¸öÒÑ¾­´æÔÚµÄ`Lang`µÄ»°£¬Êµ¼ÊÉÏÖ»ÊÇ´´½¨ÁËÒ»¸öÖ»º¬ÓÐÒ»¸ö`int`±äÁ¿µÄ¶ÔÏó¡£
+ä¹Ÿå°±æ˜¯è¯´å½“æ‚¨é‡å¤åˆ›å»ºä¸€ä¸ªå·²ç»å­˜åœ¨çš„`Lang`çš„è¯ï¼Œå®žé™…ä¸Šåªæ˜¯åˆ›å»ºäº†ä¸€ä¸ªåªå«æœ‰ä¸€ä¸ª`int`å˜é‡çš„å¯¹è±¡ã€‚
 
-**¸ü¶àÇë²é¿´Ô´´úÂë**
+**æ›´å¤šè¯·æŸ¥çœ‹æºä»£ç **
 
-## ÈçºÎ¼ÓÈëµ½ÄúµÄÏîÄ¿ÖÐ
-**°æ±¾ºÅ¿ÉÄÜ²»ÊÇ×îÐÂµÄ£¬ÇëÒÔMavenÖÐÑë²Ö¿âÎª×¼**
+## å¦‚ä½•åŠ å…¥åˆ°æ‚¨çš„é¡¹ç›®ä¸­
+**ç‰ˆæœ¬å·å¯èƒ½ä¸æ˜¯æœ€æ–°çš„ï¼Œè¯·ä»¥Mavenä¸­å¤®ä»“åº“ä¸ºå‡†**
 
 **Groovy Gradle:**
 ```groovy
@@ -59,9 +59,9 @@ implementation 'io.github.createduser:LangaugeString4j:0.9.1'
 ```kotlin
 implementation("io.github.createduser:LangaugeString4j:0.9.1")
 ```
-## ÎÄµµ
-ÓÚ`docs`ÎÄ¼þ¼ÐÖÐº¬ÓÐ¿ÉÔÚä¯ÀÀÆ÷ÏÔÊ¾µÄÒ³Ãæ£¬ÒÔ¼òÌåÖÐÎÄÐÎÊ½Ìá¹©¡£ÔÚÉÏ´«µÄ¹¤¼þÖÐÒ²ÒÑº¬ÓÐ¼òÌåÖÐÎÄÐÎÊ½µÄÎÄµµ
+## æ–‡æ¡£
+äºŽ`docs`æ–‡ä»¶å¤¹ä¸­å«æœ‰å¯åœ¨æµè§ˆå™¨æ˜¾ç¤ºçš„é¡µé¢ï¼Œä»¥ç®€ä½“ä¸­æ–‡å½¢å¼æä¾›ã€‚åœ¨ä¸Šä¼ çš„å·¥ä»¶ä¸­ä¹Ÿå·²å«æœ‰ç®€ä½“ä¸­æ–‡å½¢å¼çš„æ–‡æ¡£
 
-[Ìø×ªÖÁÎÄµµ](docs/index.html)
-[Ìø×ªÖÁMavenÖÐÑë²Ö¿âÒ³Ãæ](https://central.sonatype.com/artifact/io.github.createduser/LangaugeString4j/overview)
-[Ìø×ªÖÁ²©¿Í](https://userrrrr.cn/)
+[è·³è½¬è‡³æ–‡æ¡£](docs/index.html)
+[è·³è½¬è‡³Mavenä¸­å¤®ä»“åº“é¡µé¢](https://central.sonatype.com/artifact/io.github.createduser/LangaugeString4j/overview)
+[è·³è½¬è‡³åšå®¢](https://userrrrr.cn/)

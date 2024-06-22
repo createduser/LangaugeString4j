@@ -1,7 +1,7 @@
 # LanguageString4j
 **This page uses Google Translate.**
 
-[繁體中文](README_zh.md) [简体中文](README_zh_cn.md) [English](README.md)
+[绻侀珨涓枃](README_zh.md) [绠�浣撲腑鏂嘳(README_zh_cn.md) [English](README.md)
 ## Introduction
 <p>This is a code library created to make it easier to operate strings in multi-language scenarios</p>
 In the past, we needed to store multiple languages, and we may need to do this
@@ -26,7 +26,7 @@ The above code has not even adapted to the problem of returning different Locale
 But when you use LanguageString4j, just do this
 ```java
 LangStrings langStrings = new LangStrings("hello");
-langStrings.set(new LangString(Lang._zh,"你好"));a
+langStrings.set(new LangString(Lang._zh,"浣犲ソ"));
 langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
