@@ -1,10 +1,10 @@
-package io.github.userrrrr.langString.test;
+package io.github.createduser.langString.test;
 
-import io.github.userrrrr.langString.LangString;
-import io.github.userrrrr.langString.LangStrings;
+import io.github.createduser.langString.LangString;
+import io.github.createduser.langString.LangStrings;
 import org.junit.jupiter.api.Test;
 
-import io.github.userrrrr.langString.Lang;
+import io.github.createduser.langString.Lang;
 
 import java.util.Locale;
 

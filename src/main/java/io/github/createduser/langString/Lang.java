@@ -1,4 +1,4 @@
-package io.github.userrrrr.langString;
+package io.github.createduser.langString;
 
 import java.util.ArrayList;
 import java.util.Locale;

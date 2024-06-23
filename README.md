@@ -59,12 +59,12 @@ That is to say, when you repeatedly create an existing `Lang`, you actually only
 
 **Groovy Gradle:**
 ```groovy
-implementation 'io.github.createduser:LangaugeString4j:0.9.2'
+implementation 'io.github.createduser:LangaugeString4j:0.9.3'
 ```
 
 **Kotlin Gradle:**
 ```kotlin
-implementation("io.github.createduser:LangaugeString4j:0.9.2")
+implementation("io.github.createduser:LangaugeString4j:0.9.3")
 ```
 ## document
 The `docs` folder contains pages that can be displayed in the browser and are provided in Simplified Chinese. Documents in Simplified Chinese are also included in the uploaded artifacts.

@@ -60,12 +60,12 @@ System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 
 **Groovy Gradle:**
 ```groovy
-implementation 'io.github.createduser:LangaugeString4j:0.9.2'
+implementation 'io.github.createduser:LangaugeString4j:0.9.3'
 ```
 
 **Kotlin Gradle:**
 ```kotlin
-implementation("io.github.createduser:LangaugeString4j:0.9.2")
+implementation("io.github.createduser:LangaugeString4j:0.9.3")
 ```
 ## 文件
 於`docs`資料夾中含有可在瀏覽器顯示的頁面，以簡體中文形式提供。在上傳的工件中也已含有簡體中文形式的文檔

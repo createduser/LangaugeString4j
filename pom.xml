@@ -6,7 +6,7 @@
 
     <groupId>io.github.createduser</groupId>
     <artifactId>LangaugeString4j</artifactId>
-    <version>0.9.2</version>
+    <version>0.9.3</version>
     <packaging>jar</packaging>
     <name>LanguageString4j</name>
     <description>The simple implementation of the multi-language string in Java.</description>
