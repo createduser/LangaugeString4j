@@ -19,9 +19,6 @@ public class LangTest {
         assertEquals(lang.getRegion(),Lang.root);
         assertEquals(lang.getLanguageCode(),Lang._zh.getLanguageCode());
     }
-    public void getRegion(){
-
-    }
     @Test
     public void getLanguageCode(){
         Lang CN_zh = Lang.CN_zh;
@@ -58,8 +55,8 @@ public class LangTest {
         Lang RU_ru = new Lang("ru","RU");
 
         assertEquals("zh", _zh.getCode());
-        assertEquals("RU_ru", RU_ru.getCode());
-        assertEquals("CN_zh", CN_zh.getCode());
+        assertEquals("ru_RU", RU_ru.getCode());
+        assertEquals("zh_CN", CN_zh.getCode());
     }
     @Test
     public void isRegion(){

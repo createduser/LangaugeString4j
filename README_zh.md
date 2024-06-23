@@ -31,6 +31,12 @@ langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 ```
+您甚至可以直接透過資源包來初始化`LangStrings`。但是這種方式只會獲得系統支援的語言，也就是
+`Locale.getAvailableLocales()`所傳回的Locale。
+```java
+LangStrings langStrings = new LangStrings("資源包名稱","鍵");
+System.out.println(langStrings.get(new Lang(Locale.getDefault())));
+```
 ## 健壯性
 ### LangStrings
 在呼叫`LangStrings.get`方法時會先嘗試取得完全符合語言和地區的字串，如果無法取得就會去獲得該語言的字串
@@ -54,12 +60,12 @@ System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 
 **Groovy Gradle:**
 ```groovy
-implementation 'io.github.createduser:LangaugeString4j:0.9.1'
+implementation 'io.github.createduser:LangaugeString4j:0.9.2'
 ```
 
 **Kotlin Gradle:**
 ```kotlin
-implementation("io.github.createduser:LangaugeString4j:0.9.1")
+implementation("io.github.createduser:LangaugeString4j:0.9.2")
 ```
 ## 文件
 於`docs`資料夾中含有可在瀏覽器顯示的頁面，以簡體中文形式提供。在上傳的工件中也已含有簡體中文形式的文檔

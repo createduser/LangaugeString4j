@@ -6,7 +6,7 @@
 
     <groupId>io.github.createduser</groupId>
     <artifactId>LangaugeString4j</artifactId>
-    <version>0.9.1</version>
+    <version>0.9.2</version>
     <packaging>jar</packaging>
     <name>LanguageString4j</name>
     <description>The simple implementation of the multi-language string in Java.</description>
@@ -14,17 +14,26 @@
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://github.com/createduser/LangaugeString4j/blob/master/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>central</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.github.createduser</groupId>
                 <artifactId>LangaugeString4j</artifactId>
-                <version>0.9.1</version>
+                <version>0.9.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -101,6 +110,12 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <scm>

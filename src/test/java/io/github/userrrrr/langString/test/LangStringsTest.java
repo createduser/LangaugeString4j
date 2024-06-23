@@ -5,7 +5,11 @@ import io.github.userrrrr.langString.Lang;
 import io.github.userrrrr.langString.LangString;
 import io.github.userrrrr.langString.LangStrings;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.*;
 

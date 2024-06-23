@@ -31,6 +31,11 @@ langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 ```
+You can even initialize `LangStrings` directly from the resource bundle. However, this method will only get the languages ​​supported by the system, that is, the Locale returned by `Locale.getAvailableLocales()`.
+```java
+LangStrings langStrings = new LangStrings("resource bundle name", "key");
+System.out.println(langStrings.get(new Lang(Locale.getDefault())));
+```
 ## Robustness
 ### LangStrings
 When calling the `LangStrings.get` method, it will first try to obtain a string that exactly matches the language and region. If it cannot be obtained, it will obtain a string in that language.
@@ -54,12 +59,12 @@ That is to say, when you repeatedly create an existing `Lang`, you actually only
 
 **Groovy Gradle:**
 ```groovy
-implementation 'io.github.createduser:LangaugeString4j:0.9.1'
+implementation 'io.github.createduser:LangaugeString4j:0.9.2'
 ```
 
 **Kotlin Gradle:**
 ```kotlin
-implementation("io.github.createduser:LangaugeString4j:0.9.1")
+implementation("io.github.createduser:LangaugeString4j:0.9.2")
 ```
 ## document
 The `docs` folder contains pages that can be displayed in the browser and are provided in Simplified Chinese. Documents in Simplified Chinese are also included in the uploaded artifacts.
