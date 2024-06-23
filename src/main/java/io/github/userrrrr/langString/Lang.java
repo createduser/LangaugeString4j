@@ -141,10 +141,9 @@ public class Lang {
     }
 
     /**
-     * 通过Locale中的语言和地区定义，一般不建议使用
+     * 通过Locale中的语言和地区定义
      * @param locale 语言环境
      */
-    @Deprecated
     public Lang(Locale locale) {
         this(locale.getLanguage(), locale.getCountry());
     }
@@ -206,7 +205,7 @@ public class Lang {
         public String getCode(){
             if (region == null || region.equals(""))
                 return lang;
-            return region + "_" + lang;
+            return lang + "_" + region;
         }
 
         /**
@@ -299,5 +298,10 @@ public class Lang {
     @Override
     public int hashCode() {
         return Objects.hash(baseLangIndex);
+    }
+
+    @Override
+    public String toString() {
+        return this.getCode();
     }
 }

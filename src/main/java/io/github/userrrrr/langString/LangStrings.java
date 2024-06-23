@@ -1,7 +1,11 @@
 package io.github.userrrrr.langString;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.*;
 
 public class LangStrings {
     /**
@@ -20,10 +24,47 @@ public class LangStrings {
     }
 
     /**
+     * 通过资源包进行获得各语言的字符串，仅会获得其中系统中已支持的语言
+     * @param baseName 资源包路径及名字
+     * @param key 键
+     */
+    public LangStrings(String baseName,String key){
+        HashSet<Lang> langsInSystem = new HashSet<>();//在系统里支持的所有语言
+        HashSet<Lang> langsInResource = new HashSet<>();//在资源包内包含的语言
+        HashMap<Lang,URL> resourceURLs = new HashMap<>();//资源URL
+
+        resourceURLs.put(Lang.root,ClassLoader.getSystemResource(baseName + ".properties"));
+        langsInResource.add(Lang.root);
+
+        for (Locale locale : Locale.getAvailableLocales()){
+            langsInSystem.add(new Lang(locale));
+        }
+
+        for (Lang lang : langsInSystem){
+            URL resourceURL = ClassLoader.getSystemResource(baseName + "_" + lang.getCode() + ".properties");
+            if (resourceURL != null) {
+                resourceURLs.put(lang,resourceURL);
+                langsInResource.add(lang);
+            }
+        }
+
+        for (Lang lang : langsInResource){
+            Properties properties = new Properties();
+            try {
+                properties.load(new InputStreamReader(resourceURLs.get(lang).openStream()));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            this.set(new LangString(lang, (String) properties.get(key)));
+        }
+    }
+
+    /**
      * 拷贝构造函数，会拷贝形参的所有LangString
      * @param langStrings 被拷贝的LangStrings
      */
-    public LangStrings(LangStrings langStrings){
+    public LangStrings(@org.jetbrains.annotations.NotNull LangStrings langStrings){
         this.strings = new ArrayList<>(langStrings.getAll());
     }
 
@@ -70,7 +111,7 @@ public class LangStrings {
     /**
      * 设置LangString，会先尝试寻找在列表中已经包含的LangString然后进行设置，否则直接添加
      */
-    public void set(LangString langString){
+    public void set(@NotNull LangString langString){
         int index = this.getIndex(langString.getLang());
         if(index == -1) {
             this.strings.add(langString);

@@ -5,7 +5,11 @@ import io.github.userrrrr.langString.Lang;
 import io.github.userrrrr.langString.LangString;
 import io.github.userrrrr.langString.LangStrings;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,5 +47,10 @@ public class LangStringsTest {
         langStringsList.add(new LangString(Lang._zh,"_zh"));
 
         assertEquals(langStringsList,langStrings.getAll());
+    }
+    @Test
+    public void LangStrings() throws IOException {
+        LangStrings langStrings = new LangStrings("testString","test");
+        System.out.println(langStrings.get(new Lang(Locale.getDefault())));
     }
 }

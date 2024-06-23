@@ -29,6 +29,13 @@ langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 ```
+
+您甚至可以直接通过资源包来初始化`LangStrings`。但是这种方式只会获得系统支持的语言，也就是
+`Locale.getAvailableLocales()`所返回的Locale。
+```java
+LangStrings langStrings = new LangStrings("资源包名称","键");
+System.out.println(langStrings.get(new Lang(Locale.getDefault())));
+```
 ## 健壮性
 ### LangStrings
 在调用`LangStrings.get`方法时会先尝试获得完全匹配语言和地区的字符串，如果无法获得就会去获得该语言的字符串

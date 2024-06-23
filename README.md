@@ -31,6 +31,11 @@ langStrings.set(new LangString(Lang._fr,"Bonjour"));
 
 System.out.println(langStrings.get(new Lang(Locale.getDefault())));
 ```
+You can even initialize `LangStrings` directly from the resource bundle. However, this method will only get the languages ​​supported by the system, that is, the Locale returned by `Locale.getAvailableLocales()`.
+```java
+LangStrings langStrings = new LangStrings("resource bundle name", "key");
+System.out.println(langStrings.get(new Lang(Locale.getDefault())));
+```
 ## Robustness
 ### LangStrings
 When calling the `LangStrings.get` method, it will first try to obtain a string that exactly matches the language and region. If it cannot be obtained, it will obtain a string in that language.
