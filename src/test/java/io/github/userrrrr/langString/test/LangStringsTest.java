@@ -48,4 +48,9 @@ public class LangStringsTest {
 
         assertEquals(langStringsList,langStrings.getAll());
     }
+    @Test
+    public void LangStrings() throws IOException {
+        LangStrings langStrings = new LangStrings("testString","test");
+        System.out.println(langStrings.get(new Lang(Locale.getDefault())));
+    }
 }
